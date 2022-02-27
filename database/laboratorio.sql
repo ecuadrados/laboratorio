@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2022 a las 23:18:03
+-- Tiempo de generación: 28-02-2022 a las 00:42:35
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -132,10 +132,12 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `resultado` (
   `resultado_id` bigint(20) NOT NULL,
   `paciente_documento` varchar(30) NOT NULL,
+  `resultado_paciente` varchar(255) DEFAULT NULL,
   `resultado_fecha` date NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `resultado_token` varchar(255) NOT NULL,
   `resultado_estado` tinyint(1) NOT NULL DEFAULT 1,
-  `resultado_datos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`resultado_datos`)),
+  `resultado_datos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `resultado_filename` varchar(255) NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -201,6 +203,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indices de la tabla `resultado`
+--
+ALTER TABLE `resultado`
+  ADD PRIMARY KEY (`resultado_id`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -234,6 +242,12 @@ ALTER TABLE `paciente`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `resultado`
+--
+ALTER TABLE `resultado`
+  MODIFY `resultado_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('paciente', [PacienteController::class, 'index'])->name('paciente.index');
-Route::post('resultado', [ResultadoController::class, 'store'])->name('resultado.store');
+Route::post('storeresultado', [ResultadoController::class, 'storeresultado'])->name('resultado.storeresultado');

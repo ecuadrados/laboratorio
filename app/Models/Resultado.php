@@ -11,7 +11,7 @@ class Resultado extends Model
 
     protected $table = "resultado";
     protected $primaryKey = 'resultado_id';
-    // public $timestamps = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'paciente_documento', 'resultado_fecha', 'token', 'resultado_estado', 'resultado_datos'        

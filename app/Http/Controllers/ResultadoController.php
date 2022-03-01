@@ -67,7 +67,7 @@ class ResultadoController extends Controller
 
     public function GenerarCodigoqr($filename, $token) {      
         $url = route('resultado.show',$token);;
-        \QRcode::png($url, public_path('images\\qr\\'.$filename.'.png',QR_ECLEVEL_L,10,2));
+        \QRcode::png($url, public_path('images/qr/'.$filename.'.png',QR_ECLEVEL_L,10,2));
     }
 
     public function Addtopdf($filename, $newname) {       

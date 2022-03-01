@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/inicio', function () {
     return view('pagina.index');
 });
 
@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('resultado/show/{id}', [App\Http\Controllers\ResultadoController::class, 'show'])->name('resultado.show');
+
+

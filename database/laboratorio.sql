@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2022 a las 00:42:35
+-- Tiempo de generación: 06-03-2022 a las 23:05:06
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -71,7 +71,7 @@ CREATE TABLE `paciente` (
   `paciente_nombre2` varchar(255) DEFAULT NULL,
   `paciente_apellido1` varchar(255) NOT NULL,
   `paciente_apellido2` varchar(255) DEFAULT NULL,
-  `paciente_tipo_documento` int(11) NOT NULL,
+  `paciente_tipo_documento` varchar(255) NOT NULL,
   `paciente_documento` varchar(30) NOT NULL,
   `paciente_fecha_nacimiento` date DEFAULT NULL,
   `paciente_sexo` varchar(30) NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `paciente` (
   `paciente_celular` varchar(30) DEFAULT NULL,
   `paciente_email` varchar(255) DEFAULT NULL,
   `paciente_estado` tinyint(1) NOT NULL DEFAULT 1,
-  `fecha_actualizacion` datetime NOT NULL,
+  `fecha_actualizacion` date NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,7 +91,11 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`paciente_id`, `paciente_nombre1`, `paciente_nombre2`, `paciente_apellido1`, `paciente_apellido2`, `paciente_tipo_documento`, `paciente_documento`, `paciente_fecha_nacimiento`, `paciente_sexo`, `paciente_edad`, `paciente_barrio`, `paciente_direccion`, `paciente_telefono`, `paciente_celular`, `paciente_email`, `paciente_estado`, `fecha_actualizacion`, `fecha_creacion`) VALUES
-(1, 'Margarita', NULL, 'Rosales', 'Rodriguez', 1, '100', '2001-11-05', '', 21, 2, 'Calle 50', '300', '312', 'mar@gmail.com', 1, '2022-02-26 05:45:28', '2022-02-26 04:48:04');
+(1, 'Margarita', NULL, 'Rosales', 'Rodriguez', '1', '100', '2001-11-05', '', 21, 2, 'Calle 50', '300', '312', 'mar@gmail.com', 1, '2022-02-26', '2022-02-26 04:48:04'),
+(2, 'sdfsd', 'dsfsd', '33', 'sefsd', 'Cedula Ciudadania', '32423', '2022-03-09', 'Masculino', 23, NULL, 'dsfsd', '3432', '234324', NULL, 1, '2022-03-02', '2022-03-03 00:33:37'),
+(3, 'Martina', 'Julieth', 'Triana', 'Acevedo', 'Cedula Ciudadania', '1142226099', '2000-06-13', 'Femenino', 21, NULL, 'Cr t # 5o 21 Socorro', '66789012', '3124567890', 'martina@gmail.com', 1, '2022-03-03', '2022-03-03 20:45:17'),
+(4, 'Julio', 'Antonio', 'Perez', 'Salcedo', 'Tarjeta de Identidad', '1123456790', '2013-05-10', 'Masculino', 8, NULL, 'vsd', NULL, NULL, NULL, 1, '2022-03-03', '2022-03-03 20:50:11'),
+(5, 'Teresa', 'Isabel', 'Gomez', 'Perez', 'Cedula Ciudadania', '73104104', '1984-09-04', 'Femenino', 32, NULL, 'Calle 50 i', '788888', '33242323', 'tere@tere.com', 1, '2022-03-04', '2022-03-04 05:38:16');
 
 -- --------------------------------------------------------
 
@@ -140,6 +144,18 @@ CREATE TABLE `resultado` (
   `resultado_filename` varchar(255) NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `resultado`
+--
+
+INSERT INTO `resultado` (`resultado_id`, `paciente_documento`, `resultado_paciente`, `resultado_fecha`, `resultado_token`, `resultado_estado`, `resultado_datos`, `resultado_filename`, `fecha_creacion`) VALUES
+(1, '900800', 'Sakura', '2022-03-03', 'af5ac4ea701d4b3c5f852d2dd07e551f', 1, NULL, '900800_22-03-03_05_44_27', '2022-03-03 22:44:28'),
+(2, '1100', 'Mai Shiranui', '2022-03-01', '376dc85a7ef531828707b0008b9157d9', 1, NULL, '1100_22-03-03_10_11_43', '2022-03-04 03:11:44'),
+(3, '34242343', 'Teresa Isabel Gomez Perez', '2022-03-04', '1fdade04f8472db2b781360629697353', 1, NULL, '34242343_22-03-04_12_40_08', '2022-03-04 05:40:09'),
+(4, '1000', 'Gina Ortega', '2022-02-04', '966a523e295f058400ea2b586162e40c', 1, NULL, '1000_22-03-04_10_15_13', '2022-03-05 03:15:14'),
+(5, '1000', 'Gina Ortega', '2022-02-04', 'c852b23c126ae8b6303753de3a847759', 1, NULL, '1000_22-03-05_07_26_31', '2022-03-06 00:26:32'),
+(6, '2000', 'Sara Corrales', '2022-02-04', 'bde3896adb6aa7dccdb8b9037e631a7d', 1, NULL, '2000_22-03-05_07_27_52', '2022-03-06 00:27:52');
 
 -- --------------------------------------------------------
 
@@ -235,7 +251,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `paciente_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `paciente_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
@@ -247,7 +263,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `resultado`
 --
 ALTER TABLE `resultado`
-  MODIFY `resultado_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `resultado_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

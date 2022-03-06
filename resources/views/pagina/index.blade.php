@@ -49,6 +49,9 @@
         <i class="bi bi-phone"></i> Tel: 605 667 48 02   
         <i class="bi bi-phone"></i> Cel: +57 316 572 74 26
       </div>
+      <div class="d-flex align-items-center">
+      <i class="bi bi-box-arrow-in-right"></i><a href="{{ route('login') }}" style="color: #fff;" title="Iniciar Sesión">Ingresar</a>         
+      </div>
     </div>
   </div>
 

@@ -12,10 +12,24 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pacientes = Paciente::where(['paciente_id'=>1])->get();
-        return $pacientes;
+        $token22 = "f595f3e5e2cced19af3dbada66c8fd88";
+        if($request->token == $token22) {
+            $pacientes = Paciente::where(['paciente_estado'=>1])->get();
+            return $pacientes;
+        } 
+
+        return response()->json([
+            "message" => "error token no valido"               
+        ]);
+    }
+
+    public function indexview()
+    {
+        $pacientes = Paciente::where(['paciente_estado'=>1])->get();
+        // return $pacientes;
+        return view('paciente.indexview', compact('pacientes'));
     }
 
     /**
@@ -25,7 +39,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('paciente.create');
     }
 
     /**
@@ -36,7 +50,24 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $paciente = new Paciente();
+        $paciente->paciente_nombre1 = $request['paciente_nombre1'];
+        $paciente->paciente_nombre2 = $request['paciente_nombre2'];
+        $paciente->paciente_apellido1 = $request['paciente_apellido1'];
+        $paciente->paciente_apellido2 = $request['paciente_apellido2'];
+        $paciente->paciente_tipo_documento = $request['paciente_tipo_documento'];
+        $paciente->paciente_documento = $request['paciente_documento'];
+        $paciente->paciente_fecha_nacimiento = $request['paciente_fecha_nacimiento'];
+        $paciente->paciente_sexo = $request['paciente_sexo'];
+        $paciente->paciente_edad = $request['paciente_edad'];
+        $paciente->paciente_direccion = $request['paciente_direccion'];
+        $paciente->paciente_telefono = $request['paciente_telefono'];
+        $paciente->paciente_celular = $request['paciente_celular'];
+        $paciente->paciente_email = $request['paciente_email'];
+        $paciente->fecha_actualizacion = date("y-m-d");
+        $paciente->save();
+
+        return redirect()->route('paciente.indexview');
     }
 
     /**

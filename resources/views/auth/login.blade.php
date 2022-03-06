@@ -1,73 +1,105 @@
-@extends('layouts.app')
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+<title>Elite Hospital Admin Template - Hospital admin dashboard web app kit</title>
+<!-- Bootstrap Core CSS -->
+<link href="{{ asset('assets/eliteadmin/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/eliteadmin/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css') }}" rel="stylesheet">
+<!-- animation CSS -->
+<link href="{{ asset('assets/eliteadmin/css/animate.css') }}" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="{{ asset('assets/eliteadmin/css/style.css') }}" rel="stylesheet">
+<!-- color CSS -->
+<link href="{{ asset('assets/eliteadmin/css/colors/megna.css') }}" id="theme" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+    .login-fondo {
+        /* background-image: url("{{ asset('assets/img/slide/slide-1.jpg') }}"); */
+    }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+  ga('create', 'UA-19175540-9', 'auto');
+  ga('send', 'pageview');
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</script>
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader">
+  <div class="cssload-speeding-wheel"></div>
 </div>
-@endsection
+<section id="wrapper" class="login-fondo">
+  <div class="login-box">
+    <div class="white-box">
+      <form class="form-horizontal form-material" id="loginform"  method="POST" action="{{ route('login') }}">
+        @csrf
+
+        <div class="form-group">
+          <div class="col-xs-12 text-center">
+            <div class="user-thumb text-center"> <img alt="thumbnail" width="200" src="{{ asset('assets/img/logo.png') }}">            
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input  class="form-control" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  placeholder="Ingrese email" autofocus>           
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
+        </div>
+        <div class="form-group ">
+          <div class="col-xs-12">
+          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Ingreso contraseña" required autocomplete="current-password">
+          @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <div class="col-xs-12">
+            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit"> {{ __('Login') }}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- jQuery -->
+<script src="{{ asset('assets/eliteadmin/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+ <!-- Bootstrap Core JavaScript -->
+ <script src="{{ asset('assets/eliteadmin/bootstrap/dist/js/tether.min.js') }}"></script>
+<script src="{{ asset('assets/eliteadmin/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/eliteadmin/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js') }}"></script>
+ <!-- Menu Plugin JavaScript -->
+ <script src="{{ asset('assets/eliteadmin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
+<!--slimscroll JavaScript -->
+<script src="{{ asset('assets/eliteadmin/js/jquery.slimscroll.js') }}"></script>
+<!--Wave Effects -->
+<script src="{{ asset('assets/eliteadmin/js/waves.js') }}"></script>
+<!-- Custom Theme JavaScript -->
+<script src="{{ asset('assets/eliteadmin/js/custom.min.js') }}"></script>
+<!--Style Switcher -->
+<script src="{{ asset('assets/eliteadmin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js') }}"></script>
+</body>
+</html>

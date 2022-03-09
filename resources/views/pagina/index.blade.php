@@ -43,7 +43,13 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
       <div class="align-items-center d-none d-md-flex">
-        <i class="bi bi-clock"></i> {{date("l d F Y") }}
+        <i class="bi bi-clock"></i> 
+        <?php
+        //date("l d F Y") 
+        $diassemana = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        echo $diassemana[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+        ?>
       </div>
       <div class="d-flex align-items-center">
         <i class="bi bi-phone"></i> Tel: 605 667 48 02   
@@ -71,8 +77,8 @@
           <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
           <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departamentos</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctores</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li><a class="nav-link scrollto" href="#doctors">Doctores</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -88,7 +94,7 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -112,8 +118,8 @@
         <!-- Slide 1 -->
         <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
           <div class="container">
-            <h2>Bienvenidos a <span>Laboratorios </span></h2>
-            <p>Realizar y analizar exámenes de las diferentes áreas con
+            <h2>Bienvenidos a el <span>Laboratorio Lizceth Camacho</span></h2>
+            <p>En donde realizamos y analizamos exámenes de las diferentes áreas con
               estándares de calidad y oportunidad que garanticen un resultado
               veraz y confiable, para brindar una excelente ayuda diagnostica a la
               comunidad que lo demande.
@@ -125,8 +131,12 @@
         <!-- Slide 2 -->
         <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
           <div class="container">
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+            <h2>Diferentes tipos de examenes</h2>
+            <p> Examen Médico de ingreso, Periódicos, Post incapacidad, Retiro, Con énfasis,
+                Ocupacional, en Altura, Osteomuscular. Paraclínicos como: 
+                Audiometrías, Visiometrias, Optometrías, Hematología, Química,
+                Toxicología, Microbiología, Inmunología, Coproanalisis, Urianalisis,
+                Hormonas, Pruebas Especiales y de Coagulación entre otras</p>
             <a href="#about" class="btn-get-started scrollto">Leer Mas</a>
           </div>
         </div>
@@ -134,8 +144,8 @@
         <!-- Slide 3 -->
         <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
           <div class="container">
-            <h2>Sequi ea ut et est quaerat</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+            <h2>Consulte sus resultados</h2>
+            <p>Desde aqui puede consultar los resultados de sus examenes en cualquier momento y desde cualquier dispositivo, ya sea pc, table o celular.</p>
             <a href="#about" class="btn-get-started scrollto">Leer Mas</a>
           </div>
         </div>
@@ -163,32 +173,34 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title"><a href="">Responsabilidad</a></h4>
+              <p class="description">Trabajamos con responsabilidad y compromiso para garantizar una buena atención a nuestros clientes</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="fas fa-pills"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <h4 class="title"><a href="">Examenes</a></h4>
+              <p class="description">Manejamos diferentes tipos de examenes y paraclínicoscomplementarios de salud ocupacional</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="fas fa-thermometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <div class="icon"><i class="fas fa-id-badge"></i></div>
+              <h4 class="title"><a href="">Profesionales</a></h4>
+              <p class="description">Contamos con los mejores profesionales especializados e idóneos para realizar cada 
+uno de los procedimientos</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="fas fa-dna"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <div class="icon"><i class="fas fa-laptop-medical"></i></div>
+              <h4 class="title"><a href="">Infraestructura</a></h4>
+              <p class="description">Tenemos los equipos de última tecnología que van a la vanguardia de los protocolos 
+actualizados.</p>
             </div>
           </div>
 
@@ -202,9 +214,9 @@
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <h3>¿En una emergencia? ¿Necesitas ayuda ahora?</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn scrollto" href="#appointment">Haga Una Cita</a>
+          <h3>¿Necesitas una cotización?</h3>
+          <p> Podras solicitar una cotizacion en cualquier momento, solo presiona el siguiente botón y con gusto le atenderemos</p>
+          <a class="cta-btn scrollto" href="#appointment">Realizar una Cotización</a>
         </div>
 
       </div>
@@ -216,12 +228,12 @@
 
         <div class="section-title">
           <h2>¿Quienes Somos?</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Somos una empresa dedicada a satisfacer los requerimientos de nuestros clientes ofreciendo servicios de calidad para garantizar el cubrimiento de sus necesidades al mismo tiempo que le brindamos el respaldo de nuestra compañía.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="assets/img/about_.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Mision</h3>
@@ -254,7 +266,7 @@
     </section><!-- End About Us Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
@@ -299,7 +311,8 @@
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> -->
+    <!-- End Counts Section -->
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -309,23 +322,25 @@
           <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
             <div class="icon-box mt-5 mt-lg-0">
               <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+              <h4>Examen medico con Énfasis Ocupacional, 
+Osteomuscular, Altura, Egreso, Post incapacidad
+</h4>
+              <p>Este examen comprende la revisión médica física general en la que se busca encontrar algún hallazgo sobre las condiciones para desempeñar la propuesta labora</p>
             </div>
             <div class="icon-box mt-5">
               <i class="bx bx-cube-alt"></i>
-              <h4>Harum esse qui</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+              <h4>Audiometría</h4>
+              <p>Una audiometría es un examen que evalúa la función auditiva en términos de tono, equilibrio e intensidad del sonido.</p>
             </div>
             <div class="icon-box mt-5">
               <i class="bx bx-images"></i>
-              <h4>Aut occaecati</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+              <h4>Visiometria</h4>
+              <p>Es una prueba tamiz realizada por un profesional en optometría u optómetra utilizada para valorar la capacidad visual del individuo</p>
             </div>
             <div class="icon-box mt-5">
               <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+              <h4>Espirometria</h4>
+              <p>Es un estudio rápido e indoloro con el fin de medir la cantidad de aire que pueden retener los pulmones</p>
             </div>
           </div>
           <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/features.jpg");' data-aos="zoom-in"></div>
@@ -340,39 +355,44 @@
 
         <div class="section-title">
           <h2>Servicios</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p></p>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-heartbeat"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="icon"><i class="fas fa-plus"></i></div>
+            <h4 class="title"><a href="">Servicios Integrados</a></h4>
+            <p class="description">Todos los servicios integrados en una sola sede, para evitar retrasos y desplazamientos 
+riesgosos para sus trabajadores</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-pills"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <div class="icon"><i class="fas fa-warehouse"></i></div>
+            <h4 class="title"><a href="">Actividades Masivas</a></h4>
+            <p class="description">Para actividades masivas ofrecemos desplazamiento a su empresa sin ningún costo 
+adicional, para toma de muestras y atención de sus trabajadores</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon"><i class="fas fa-hospital-user"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <h4 class="title"><a href="">Capacitaciones</a></h4>
+            <p class="description">Ofrecemos capacitaciones campañas en las instalaciones de su empresa o en el lugar que 
+lo demanden</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-dna"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <div class="icon"><i class="fas fa-file-medical-alt"></i></div>
+            <h4 class="title"><a href="">Certificados</a></h4>
+            <p class="description">Nuestra respuesta es oportuna los certificados están disponibles el mismo día</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-wheelchair"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <div class="icon"><i class="fas fa-id-card-alt"></i></div>
+            <h4 class="title"><a href="">Disponibilidad</a></h4>
+            <p class="description">Estamos siempre disponibles para cualquier jornada o eventualidad que se ofrezca en su 
+empresa como: Jornadas para detección de Alcohol y drogas de Abuso, entre otras</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"><i class="fas fa-notes-medical"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            <div class="icon"><i class="fas fa-pager"></i></div>
+            <h4 class="title"><a href="">tecnología</a></h4>
+            <p class="description">Estamos siempre disponibles para cualquier jornada o eventualidad que se ofrezca en su 
+empresa como: Jornadas para detección de Alcohol y drogas de Abuso, entre otras</p>
           </div>
         </div>
 
@@ -384,8 +404,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Aparta Una Cita</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Realiza una Cotización</h2>
+          <p>Llene los siguientes datos para pedir una cotización.</p>
         </div>
 
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
@@ -399,38 +419,16 @@
             <div class="col-md-4 form-group mt-3 mt-md-0">
               <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefono" required>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Dia de Cita" required>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select">
-                <option value="">Seleccione Departamento</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select">
-                <option value="">Seleccione Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-
+          </div>        
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Mensaje (Opcional)"></textarea>
           </div>
           <div class="my-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+            <div class="sent-message">Su solicitud ha sido enviada correctamente. Gracias!</div>
           </div>
-          <div class="text-center"><button type="submit"> Cita </button></div>
+          <div class="text-center"><button type="submit"> Aceptar </button></div>
         </form>
 
       </div>
@@ -441,11 +439,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Departamentos</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur 
-            ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-            quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. 
-            Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Nuestas Sedes</h2>
+          <p>Visita la sede mas cercana a tu ubicación</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -453,95 +448,49 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
                 <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                  <h4>INMUNOLOGIA Y AUTOINMUNIDAD</h4>
-                  <p>Apoyo al estudio de trastornos Inmunológicos y Reumatológicos.</p>
+                  <h4>Sede Principal</h4>                
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                  <h4> INFECCIOSAS</h4>
-                  <p>Apoyo diagnóstico Enfermedades Virales.</p>
+                  <h4>Sede Zaragocilla</h4>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>QUIMICA DE ORINA</h4>
-                  <p>Apoyo al estudio de las enfermedades que se manifiestan o que tiene
-                    un origen en el sistema urinario.
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>QUIMICA SANGUÍNEA</h4>
-                  <p>Estadio de enfermedad general y suministra información sobre el
-                    metabolismo.                    
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>DROGAS TERAPEUTICAS</h4>
-                  <p>Medicina del nivel de medicamento circulante en la sangre en un
-                    paciente que requiere estar consumiendo crónicamente el mismo.                                    
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>TOXICOLOGÍA</h4>
-                  <p>Apoyo diagnóstico a los diferentes tipos de intoxicaciones por
-                    consumo de algunas sustancias.                                                      
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>PARASITOLOGIA </h4>
-                  <p>Apoyo Diagnóstico en Enfermedades Parasitarias</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>HEMATOLOGIA Y COAGULACION</h4>
-                  <p>Apoyo diagnóstico de Anemias – Leucemias- Trastornos de la Sangre</p>
+                  <h4>Sede Turbaco</h4>                  
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                  <h4>ENDOCRINOLOGÍA Y MARCADORES TUMORALES </h4>
-                  <p>Apoyo al estudio de enfermedades relacionadas con las glándulas y el
-                    sistema endocrino en general.
-                  </p>
+                  <h4>Sede Bocagrande</h4>                  
                 </a>
-              </li>
+              </li>            
             </ul>
           </div>
           <div class="col-lg-8">
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
-                <h3>Cardiology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <h3>Sede Principal</h3>
+                <img src="assets/img/principal.jpeg" alt="" class="img-fluid">
+                <p>Nuevo Bosque, Transversal 52 N° 29E - 138, Entrando por la Olimpica Buenos Aires</p>
               </div>
               <div class="tab-pane" id="tab-2">
-                <h3>Neurology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <h3>Sede Zaragocilla</h3>
+                <img src="assets/img/zaragocilla.jpeg" alt="" class="img-fluid">
+                <p>Avenida el Consulado, Zaragocilla 28 - 149, cerca del semaforo para girar al hospital universitario,
+                  telefonos: 6748875 - 3006947002
+                </p>
               </div>
               <div class="tab-pane" id="tab-3">
-                <h3>Hepatology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <h3>Sede Turbaco</h3>
+                <img src="assets/img/turbaco.jpeg" alt="" class="img-fluid">
+                <p>Turbaco Avenida Pastrana #28 - 129, a el lado de punto rico. Toma de muestras a domicilio, Telefonos: 6851077 - 3165727426</p>
               </div>
               <div class="tab-pane" id="tab-4">
-                <h3>Pediatrics</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <h3>Sede Bocagrande</h3>
+                <img src="assets/img/bocagrande.jpeg" alt="" class="img-fluid">
+                <p>Centro Comercial Bocagrande, Carrera 2B # 8 142 Piso 1, local 1-10 al lado de la Clínica Santa Cruz. Toma de muestras a domicilios, Telefonos: 6552851 - 3162713776</p>
               </div>
             </div>
           </div>
@@ -556,7 +505,7 @@
 
         <div class="section-title">
           <h2>Testimonios</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -566,12 +515,11 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Excelente servicio y atención por parte del personal.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
+                <h3>Luis D</h3>
               </div>
             </div><!-- End testimonial item -->
 
@@ -579,12 +527,11 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Excelente servicio que ofrece el laboratorio liceth camacho. Donde los resultados son entregados oportunamente y un adecuado manejo de su ética profesional. Y asi mismo cabe resaltar la excelente atención al cliente. Se los recomiendo a ojos cerrados.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
+                <h3>mabel b</h3>
               </div>
             </div><!-- End testimonial item -->
 
@@ -592,41 +539,13 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Me pareció un lugar muy seguro e higiénico, el trato de la persona que me atendió fue muy agradable, Recomendado.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
+                <h3>Michael L</h3>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
+            </div><!-- End testimonial item -->            
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -635,7 +554,7 @@
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Doctors Section ======= -->
-    <section id="doctors" class="doctors section-bg">
+    <!-- <section id="doctors" class="doctors section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -720,7 +639,8 @@
         </div>
 
       </div>
-    </section><!-- End Doctors Section -->
+    </section> -->
+    <!-- End Doctors Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
@@ -733,14 +653,19 @@
 
         <div class="gallery-slider swiper">
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/recepcion.png"><img src="assets/img/gallery/recepcion.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/sala_espera.png"><img src="assets/img/gallery/sala_espera.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/sala_espera2.png"><img src="assets/img/gallery/sala_espera2.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area.png"><img src="assets/img/gallery/area.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area2.png"><img src="assets/img/gallery/area2.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area3.png"><img src="assets/img/gallery/area3.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area4.png"><img src="assets/img/gallery/area4.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area5.png"><img src="assets/img/gallery/area5.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area6.png"><img src="assets/img/gallery/area6.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area7.png"><img src="assets/img/gallery/area7.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area8.png"><img src="assets/img/gallery/area8.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/area9.png"><img src="assets/img/gallery/area9.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/consultorio.png"><img src="assets/img/gallery/consultorio.png" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -749,7 +674,7 @@
     </section><!-- End Gallery Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -831,10 +756,11 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section> -->
+    <!-- End Pricing Section -->
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <!-- <section id="faq" class="faq section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -901,7 +827,8 @@
         </ul>
 
       </div>
-    </section><!-- End Frequently Asked Questioins Section -->
+    </section> -->
+    <!-- End Frequently Asked Questioins Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -909,7 +836,7 @@
 
         <div class="section-title">
           <h2>Contactos</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
       </div>
@@ -1045,14 +972,15 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+        <!-- &copy; Copyright <strong><span>Laboratorio liceth Camacho</span></strong>. All Rights Reserved -->
+        <strong><span>Laboratorio liceth Camacho</span>{{date("y"); }}</strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
   </footer><!-- End Footer -->
